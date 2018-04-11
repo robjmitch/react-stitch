@@ -4,16 +4,17 @@ import styled from 'styled-components'
 const DisplayGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-gap: ${props => props.gridGap ? props.gridGap : 0};
 `
 
-class Grid extends React.Component {
+class GridBlock extends React.Component {
   render() {
     return (
-      <DisplayGrid>
+      <DisplayGrid {...this.props}>
         {this.props.children}
       </DisplayGrid>
     )
   }
 }
 
-export default Grid
+export default GridBlock

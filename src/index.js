@@ -1,1 +1,2 @@
-export { default as Grid } from './components/Grid'
+export { default as GridBlock } from './components/GridBlock'
+export { default as GridCell } from './components/GridCell'
