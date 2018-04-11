@@ -6,12 +6,14 @@ const Cell = styled.div`
     props.gridColumn :
     props.gridColumnSpan ?
       `span ${props.gridColumnSpan}` :
-      'auto'}
+      'auto'};
   grid-row: ${props => props.gridRow ?
     props.gridRow :
     props.gridRowSpan ?
       `span ${props.gridRowSpan}` :
-      'auto'}
+      'auto'};
+  align-self: ${props => props.vAlignCell ? props.vAlignCell : 'start'};
+  justify-self: ${props => props.alignCell ? props.alignCell : 'start'};
 `
 
 class GridCell extends React.Component {

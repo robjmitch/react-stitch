@@ -1,8 +1,8 @@
 {
   "name": "react-stitch",
-  "version": "1.0.1-1",
+  "version": "1.0.1-2",
   "description": "A React component based css grid library",
-  "main": "dist/bundle.js",
+  "module": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
