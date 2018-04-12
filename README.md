@@ -13,7 +13,7 @@ In your main application, you will want to ensure you have:
 # Installation & Usage
 
 NPM or Yarn:
-- npm install react-stitch
+- `npm install react-stitch`
 
 In your application you can import your grid components from the module:
 
@@ -34,7 +34,7 @@ export default SomeApp
 ```
 
 # Browser support
-https://caniuse.com/#feat=css-grid
+- https://caniuse.com/#feat=css-grid
 
 # GridBlock
 The grid block is defaulted to a 12 section grid and has an option to
