@@ -33,6 +33,9 @@ const SomeApp = () => {
 export default SomeApp
 ```
 
+# Browser support
+https://caniuse.com/#feat=css-grid
+
 # GridBlock
 The grid block is defaulted to a 12 section grid and has an option to
 add a gap width between each section by passing in a `gridGap` prop. GridBlock
@@ -77,7 +80,7 @@ inherit the parent's alignment and vertical alignment of its parent `GridCell`.
 
 ```Javascript
 // App.js
-// 
+
 import { GridBlock, GridCell } from 'react-stitch'
 
 const SomeApp = () => {
