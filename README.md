@@ -29,13 +29,17 @@ const SomeApp = () => {
     </GridBlock>
   )
 }
+
+export default SomeApp
 ```
 
 # GridBlock
-The grid block is automatically set to a 12 section grid and has an option to
-add a gap width between each section by passing in a `gridGap` prop.
+The grid block is defaulted to a 12 section grid and has an option to
+add a gap width between each section by passing in a `gridGap` prop. GridBlock
+can be modified to have a specific grid quantity by passing in a `gridSections`
+property as well.
 
-`<GridBlock gridGap="10px"></GridBlock>`
+`<GridBlock gridGap="10px" gridSections="4"></GridBlock>`
 
 # GridCell
 The grid cell is defaulted to auto and will place each cell inline till it
@@ -52,4 +56,39 @@ or modified to span across several grids using the `gridColumnSpan` prop.
     Will span 3 grid sections starting at where the last grid left off
   </GridCell>
 </GridBlock>
+```
+
+Aligning a cell is also very simple. Using `vAlignCell` and `alignCell` props,
+you can specify any assortment available to justification and alignment
+properties. (https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)
+
+```Javascript
+<GridBlock>
+  <GridCell vAlignCell="center" alignCell="center">
+    The contents of this cell will be vertically and laterally centered.
+  </GridCell>
+</GridBlock>
+```
+
+# Nesting Grids
+A `GridBlock` component can be nested inside of a `GridCell` component and
+modified `GridBlock` properties above. However, new `GridBlock` components will
+inherit the parent's alignment and vertical alignment of its parent `GridCell`.
+
+```Javascript
+// App.js
+// 
+import { GridBlock, GridCell } from 'react-stitch'
+
+const SomeApp = () => {
+  <GridBlock>
+    <GridCell vAlignCell="center" alignCell="center">
+      <GridBlock>
+        <GridCell>
+          Contents here inherit the center cell alignments of the parent cell.
+        </GridCell>
+      </GridBlock>
+    </GridCell>
+  </GridBlock>
+}
 ```
