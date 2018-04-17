@@ -1,6 +1,6 @@
 {
   "name": "react-stitch",
-  "version": "1.1.0",
+  "version": "1.0.3",
   "description": "A React component based css grid library",
   "module": "dist/bundle.js",
   "scripts": {

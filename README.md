@@ -18,7 +18,7 @@ NPM or Yarn:
 In your application you can import your grid components from the module:
 
 ```Javascript
-import { GridBlock, GridCell} from 'react-stitch'
+import { GridBlock, GridCell } from 'react-stitch'
 
 const SomeApp = () => {
   return (
@@ -71,6 +71,27 @@ properties. (https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)
     The contents of this cell will be vertically and laterally centered.
   </GridCell>
 </GridBlock>
+```
+
+For multiple styles, a `GridCell` component can accept a `gridStyles` object
+prop.
+
+```Javascript
+const App = () => {
+  const gridCellStyles = {
+    gridColumnSpan:4,
+    alignCell:"center",
+    vAlignCell:"center"
+  }
+  
+  return (
+    <GridBlock>
+      <GridCell gridStyles={gridCellStyles}>
+        Styles applied here!
+      </GridCell>
+    </GridBlock>
+  )
+}
 ```
 
 # Nesting Grids
