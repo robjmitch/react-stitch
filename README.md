@@ -1,14 +1,14 @@
 # React stitch
 
-React stitch is a React component based css-grid library.
+React stitch is a sweet React component based css-grid library.
 
 # Dependencies
 
 In your main application, you will want to ensure you have:
 
-- React (npm install react)
-- React DOM (npm install react-dom)
-- Styled components (npm install styled-components)
+- React (`npm install react`)
+- React DOM (`npm install react-dom`)
+- Styled components (`npm install styled-components`)
 
 # Installation & Usage
 
@@ -44,6 +44,43 @@ property as well.
 
 `<GridBlock gridGap="10px" gridSections="4"></GridBlock>`
 
+> The `gridSections` prop is planned for deprecation come 2.0
+> Please use `gridTemplateColumns` or `gridColumnRepeat` and/or its row
+> equivalent to prevent any issues when upgrading.
+
+`<GridBlock gridGap="10px" gridColumnRepeat="4"></GridBlock>`
+
+You can add in some custom grid sizing using the `gridTemplateColumns` or
+`gridTemplateRows` property.
+
+```Javascript
+  <GridBlock gridTemplateRows="70vh 30vh">
+    <GridCell gridColumnSpan={12}>
+      Your first cell will end up taking the top 70vh of the view.
+    </GridCell>
+    <GridCell gridColumnSpan={12}>
+      Your second cell will take the remaining 30vh of the view here.
+    </GridCell>
+  </GridBlock>
+```
+
+The `GridBlock` component can also accept a `GridStyles` object property.
+
+```Javascript
+const App = () => {
+  const gridBlockStyles = {
+    gridColumnRepeat: 4,
+    gridRowRepeat: 2
+  }
+
+  return (
+    <GridBlock gridStyles={gridBlockStyles}>
+      Now you have a sweet custom grid
+    </GridBlock>
+  )
+}
+```
+
 # GridCell
 The grid cell is defaulted to auto and will place each cell inline till it
 a cell reaches the end of a grid block. Once reached, a new row will be created.
@@ -55,7 +92,7 @@ or modified to span across several grids using the `gridColumnSpan` prop.
   <GridCell gridColumn="2/4">
     Will take up the area between section 2 and 4
   </GridCell>
-  <GridCell gridColumnSpan="3">
+  <GridCell gridColumnSpan={3}>
     Will span 3 grid sections starting at where the last grid left off
   </GridCell>
 </GridBlock>
@@ -83,7 +120,7 @@ const App = () => {
     alignCell:"center",
     vAlignCell:"center"
   }
-  
+
   return (
     <GridBlock>
       <GridCell gridStyles={gridCellStyles}>
@@ -92,6 +129,8 @@ const App = () => {
     </GridBlock>
   )
 }
+
+export default App
 ```
 
 # Nesting Grids
@@ -116,3 +155,6 @@ const SomeApp = () => {
   </GridBlock>
 }
 ```
+
+# Issue Reporting
+Please report any issues you encounter via [GitHub issues page](https://github.com/Cishkash/react-stitch/issues).
