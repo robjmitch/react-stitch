@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Cell = styled.div`
-  grid-column: ${state => state.gridColumnSpan ?
+  grid-column: ${state => state.gridColumnSpan !== 'auto' ?
     `span ${state.gridColumnSpan}` :
     state.gridColumn};
-  grid-row: ${state => state.gridRowSpan ?
+  grid-row: ${state => state.gridRowSpan  !== 'auto' ?
     `span ${state.gridRowSpan}` :
     state.gridRow};
   align-self: ${state => state.vAlignCell};
