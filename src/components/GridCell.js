@@ -16,12 +16,12 @@ class GridCell extends React.Component {
   constructor() {
     super()
     this.state = {
-      alignCell: 'start',
+      alignCell: 'auto',
       gridColumn: 'auto',
       gridColumnSpan: 'auto',
       gridRow: 'auto',
       gridRowSpan: 'auto',
-      vAlignCell: 'start'
+      vAlignCell: 'auto'
     }
   }
 
